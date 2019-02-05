@@ -1,0 +1,76 @@
+.navbar-fixed-top {
+  background-color: #816868 !important;
+  color: white;
+}
+
+.logo {
+  background-color: #9b7f7e !important;
+  color: snow;
+}
+.logo :hover {
+  color: #1a2226 !important;
+}
+
+.active-tag {
+  color: snow !important;
+  border-left: 4px solid #fff;
+}
+
+.active-btn {
+  background-color: black !important;
+}
+
+a {
+  color: white;
+}
+
+#headerFix3 {
+  background-color: #0f0f0f;
+}
+
+.active:hover {
+  color: #c7c8ca;
+  background-color: #1a2226;
+}
+.active:hover .active-tag {
+  border-left: 4px solid #c7c8ca;
+}
+
+li a:hover {
+  color: #c7c8ca;
+}
+li a:focus {
+  color: white;
+}
+li a:active {
+  color: #c7c8ca;
+}
+
+.treeview:hover {
+  padding-left: 3px;
+  background-color: black;
+}
+
+.main-footer {
+  background-color: black;
+}
+
+.content-wrapper {
+  background-color: white;
+}
+
+.pagination li {
+  border: 1px solid #3f729b;
+  width: 50px;
+  align-content: center;
+  text-align: center;
+  height: 30px;
+}
+.pagination li .customerTable_previous .paginate_button next {
+  width: 50px;
+}
+.pagination li .paginate_button {
+  width: 40px !important;
+}
+
+/*# sourceMappingURL=index.css.map */

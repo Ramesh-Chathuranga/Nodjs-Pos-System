@@ -1,0 +1,75 @@
+.form{
+  position: relative;
+  height: auto;
+  left:0px;
+  top:0px;
+  background-color: #1b6d85;
+  padding-bottom: 20px;
+
+  label{
+    color: white;
+  }
+}
+
+.table{
+  position: relative;
+  height:auto;
+ // background-color: #c0c0c0;
+  overflow: scroll;
+  padding: 1px;
+  top: 0px;
+}
+
+button{
+  width: 100%;
+
+}
+
+#example1{
+  margin-right: 200px;
+}
+
+.box{
+  margin-bottom: 0px !important;
+}
+
+//.main-footer{
+//  position: fixed;
+//  width: 1500px;
+//}
+
+.dataTables_filter {
+  text-align: right !important;
+}
+
+.delete{
+  padding: 5px;
+}
+
+table tbody tr{
+  cursor: pointer;
+}
+
+table tbody tr td{
+  vertical-align: middle !important;
+}
+
+.selected-row{
+  background-color: rgba(0, 48, 70, 0.16) !important;
+}
+
+#bin:hover{
+  color: crimson;
+}
+
+.alertBox{
+  border: 1px black;
+  height: 100px;
+
+
+}
+
+.emptyField{
+   border: 1px solid crimson;
+}
+

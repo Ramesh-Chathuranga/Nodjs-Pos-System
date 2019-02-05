@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/AdminLTE.min.css">
+    <link rel="stylesheet" href="css/skin-black.min.css">
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+          crossorigin="anonymous">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="css/formcontroller.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/entity.css">
+    <style>
+        @media screen and (max-width:1000px){
+            .bt{
+                position: absolute;
+
+                left:20px;
+            }
+            .void{
+                display: none;
+            }
+
+            .table{
+                top:85px;
+            }
+            button{
+                width: 100px;
+                margin-left: 30px;
+                margin-right: 30px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+<!-- Main Header -->
+<header class="main-header ">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span id="headerFix" class="logo-mini headerFix"><b>S</b>HOP</span>
+        <!-- logo for regular state and mobile devices -->
+        <span id="headerFix2" class="logo-lg headerFix"><b>THOGAKADE</b> SHOP</span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-fixed-top " role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#">
+            <!-- <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"> -->
+            <i style="position: absolute;left :15px ;color: #fff; top:15px" class="fas fa-align-justify" data-toggle="push-menu"
+               role="button"></i>
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+
+
+    </nav>
+</header>
+<!-- Left side column. contains the logo and sidebar -->
+<aside id="headerFix3" class="main-sidebar headerFix">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+        <!-- Sidebar user panel (optional) -->
+
+        <!-- /.search form -->
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">HEADER</li>
+            <!-- Optionally, you can add icons to the links -->
+            <li><a  href="index.html"><i class="fas fa-home"></i></i>
+                <span>DASHBOARD</span></a></li>
+            <li ><a  href="Customer.html"><i class="fas fa-id-card"></i> <span>Customer</span></a></li>
+            <li class="active btn btn-secondary  active-btn" style="width: 100%"><a class="active-tag" href="Item.html"><i class="fas fa-shopping-basket"></i> <span>Items</span></a></li>
+
+            <li class="treeview">
+                <a href="#"><i class="fas fa-shipping-fast"></i> <span>Order</span>
+                    <span class="pull-right-container">
+                <i class="fas fa-shopping-basket"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="place_order.html"><i class="fas fa-cart-plus"></i> <span> Place Order</span></a></li>
+                    <li><a href="Order_Detail.html"> <i class="fas fa-shopping-cart"></i> <span> Order Details</span></a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1 class="tab">
+            Item
+            <small>Control panel</small>
+
+        </h1><br>
+
+
+        <div class="row">
+            <div class="col-lg-4 col-xs-12  form">
+                <form>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Code&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
+                        <div class="col-sm-10">
+                            <input type="text"  class="form-control" id="txtCode" value="" placeholder="Item Code">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label">Description:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtDes" placeholder="Description:">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label">UnitPrice:</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="txtUP" placeholder="UnitPrice">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label">QtyOnHand:</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="txtQty" placeholder="Qty On Hand">
+                        </div>
+                    </div>
+
+                    <div class="row bt">
+                        <div class="col-md-1" class="void">  </div>
+                        <div class="col-md-4  col-sm-6" ><button class="btn btn-dark" id="saveButton" type="button">SAVE</button></div>
+                        <div class="col-md-1" class="void">  </div>
+                        <div class="col-md-4  col-sm-6"><button  class="btn btn-warning" id="resetButton" type="reset">REST</button></div>
+                    </div>
+                    <div class="alertBox" id="alertBox">
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-8 col-xs-12 table">
+                <div class="box" style="font-size: 12px;">
+                    <div class="box-header">
+                        <h3 class="box-title">Item Table</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="itemTable" class="table table-bordered table-hover table-striped" style="margin-right: 300px">
+                            <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Description</th>
+                                <th>UnitPrice</th>
+                                <th>QtyOnHand</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+<!-- /.content-wrapper -->
+
+<!-- Main Footer -->
+<footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+        Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2019 <a href="#">Company</a>.</strong> All rights reserved.
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+
+    <!-- /.control-sidebar-menu -->
+
+
+    </div>
+</aside>
+<!-- /.control-sidebar -->
+<!-- Add the sidebar's background. This div must be placed
+immediately after the control sidebar -->
+<div class="control-sidebar-bg"></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap.min.js"></script>
+<script src="js/jquery.slimscroll.min.js"></script>
+<script src="js/fastclick.js"></script>
+<script src="js/adminlte.min.js"></script>
+
+<script>
+    $(function () {
+
+        $('#itemTable').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : true,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : true,
+            language: {
+                search: "_INPUT_",
+                searchPlaceholder: "Search Customers..."
+            }
+        })
+    })
+</script>
+<script>
+    var host="http://localhost:3000/api/v1";
+
+    $(document).ready(function () {
+        $('button[type="reset"]').trigger('click');
+        loadItemTable();
+    })
+
+    $("#resetButton").click(function () {
+        $('#txtCode').attr("disabled",false);
+        $('#itemTable tbody tr').removeClass('selected-row');
+        $('input').removeClass('emptyField');
+
+    })
+
+    $("#saveButton").click(function () {
+        var txtCode=$("#txtCode").val().trim();
+        var txtDescription=$("#txtDes").val().trim();
+        var txtUp=$("#txtUP").val().trim();
+        var txtQty=$("#txtQty").val().trim();
+        console.log(txtCode,txtDescription,txtUp,txtQty)
+        var item={code:txtCode,description:txtDescription,unitPrice:txtUp,qtyOnHand:txtQty}
+        if($('#txtCode').attr('disabled')){
+            var isValid=validation(txtCode,txtDescription,txtUp,txtQty);
+            console.log(host+"/items/"+txtCode)
+            if(isValid){
+                var ajax_config={
+                    method:"PUT",
+                    url:host+"/items/"+txtCode,
+                    async:true,
+                    contentType:"application/json",
+                    data:JSON.stringify(item)
+                }
+
+                $.ajax(ajax_config).done(function (responseText,statusText,jxhr) {
+                    alert("Update Succsessfully");
+                    loadItemTable();
+                    $('button[type="reset"]').trigger('click');
+                    var alertPut=`<div class="alert alert-success" role="alert">
+                                      <h4 class="alert-heading">Successful!</h4><hr>
+                                      <p class="mb-0">${txtDescription} Successfully Update ${responseText}</p>
+                                      </div>`;
+                    $('#alertBox').append(alertPut);
+
+                    setTimeout(function () {
+                        $('form #alertBox .alert').remove();
+                    },1000)
+
+                }).fail(function (jxhr,statuText,err) {
+                    alert(err,statuText);
+                })
+            }else {
+                return;
+            }
+        }else{
+            var isValid=validation(txtCode,txtDescription,txtUp,txtQty);
+
+            if(isValid){
+                var ajax_config={
+                    method:"POST",
+                    url:host+"/items",
+                    async:true,
+                    contentType:"application/json",
+                    data:JSON.stringify(item)
+                }
+
+
+                $.ajax(ajax_config).done(function (responseText,statusText,jxhr) {
+                    loadItemTable();
+                    var alertPost=`<div class="alert alert-dark" role="alert">
+                                      <h4 class="alert-heading">Successful!</h4><hr>
+                                      <p class="mb-0">${txtDescription} Successfully Save ${responseText}</p>
+                                      </div>`;
+                    $('#alertBox').append(alertPost);
+                    $('button[type="reset"]').trigger('click');
+                    setTimeout(function () {
+                        $('form #alertBox .alert').remove();
+                    },1000)
+
+                }).fill(function (jxhr,statusText,err) {
+                    var alertPost=`<div class="alert alert-danger role="alert">
+                                      <h4 class="alert-heading">UnSuccessful!</h4><hr>
+                                      <p class="mb-0">${err}</p>
+                                      </div>`;
+                    $('#alertBox').append(alertPost);
+                    setTimeout(function () {
+                        $('form #alertBox .alert').remove();
+                    },1000)
+                })
+            }else {
+                return;
+            }
+
+        }
+    })
+
+    function validation( txtCode, txtDescription, txtUp,txtQty){
+        // var txtCode=$("#txtCode").val().trim();
+        // var txtDescription=$("#txtDescription").val().trim();
+        // var txtUp=$("#txtAdd").val().trim();
+        var arry=[1,1,1,1];
+        if(!txtCode){
+            arry[0]=0;
+        }
+        if(!txtDescription){
+            arry[1]=0;
+        }
+        if(!txtUp){
+            arry[2]=0;
+        }
+
+        if(!txtQty){
+            arry[3]=0;
+        }
+        if(arry[0]==0){
+            $('#txtCode').select();
+            // $('#txtCode').attr("placeholder","Pleace Fill User ID");
+            $('#txtCode').addClass('emptyField')
+        }
+
+        if(arry[1]==0){
+            //   $('#txtDescription').attr("placeholder","Pleace Fill User Name");
+            $('#txtDescription').addClass('emptyField')
+            if(arry[0]==1){
+                $('#txtDescription').select();
+            }
+
+        }
+        if(arry[2]==0){
+            //     $('#txtAdd').attr("placeholder","Pleace Fill User address");
+            $('#txtUP').addClass('emptyField')
+            if(arry[0]==1 && arry[1]==1){
+                $('#txtUP').select();
+            }
+
+        }
+
+        if(arry[2]==0){
+            //     $('#txtAdd').attr("placeholder","Pleace Fill User address");
+            $('#txtQty').addClass('emptyField')
+            if(arry[0]==1 && arry[1]==1 &&arry[2]==1){
+                $('#txtQty').select();
+            }
+
+        }
+
+        for(var i=0;i<4;i++){
+            if(arry[i]==0){
+                return false;
+            }
+        }
+        console.log(arry);
+        return true;
+    }
+
+    $('input').keypress(function () {
+        $(this).removeClass('emptyField');
+    })
+
+    function loadItemTable() {
+        $("#itemTable").dataTable().fnDestroy();
+        $("#itemTable tbody tr").remove()
+
+        var ajax_config={
+            method:"GET",
+            url:host+"/items",
+            async:true
+        };
+
+        $.ajax(ajax_config).done(function (result,statusText,jxhr) {
+            result.forEach(function (item) {
+                var html=`<tr>
+                             <td>${item.code}</td>
+                             <td>${item.description}</td>
+                             <td>${item.unitPrice}</td>
+                             <td>${item.qtyOnHand}</td>
+                             <td><i id="bin" class="fas fa-trash"></i></td>
+                          </tr>`;
+
+                $('#itemTable tbody').append(html);
+
+                $('#itemTable tbody tr').off('click');
+                $('#itemTable tbody tr').click(function () {
+                    $('#itemTable tbody tr').removeClass('selected-row');
+                    $(this).addClass('selected-row');
+                    $('#txtCode').val($(this).find('td:first-child').text());
+                    $('#txtDes').val($(this).find('td:nth-child(2)').text());
+                    $('#txtUP').val($(this).find('td:nth-child(3)').text());
+                    $('#txtQty').val($(this).find('td:nth-child(4)').text());
+                    $('#txtCode').attr("disabled",'true');
+                });
+
+                $('.fa-trash').off('click');
+                $('.fa-trash').click(function (eventData) {
+                    eventData.stopPropagation();
+                    var row=$(this).parents('tr');
+                    var itemId=(row.find('td:first-child').text());
+                    if(confirm("Are You sure to Delete this item ?")){
+                        var ajax_config={
+                            method:"DELETE",
+                            url:host+"/items/"+itemId,
+                            async :true,
+                        }
+                        $.ajax(ajax_config).done(function (responseText,statusText,jxhr) {
+                            $(row).remove();
+                          //  console.log(responseText ,statusText);
+                            var alertDelet=`<div class="alert alert-dark" role="alert">
+                                      <h4 class="alert-heading">Successful!</h4><hr>
+                                      <p class="mb-0">${txtDescription} Successfully Delete ${responseText}</p>
+                                      </div>`;
+                            $('#alertBox').append(alertDelet);
+                            $('button[type="reset"]').trigger('click');
+                            setTimeout(function () {
+                                $('form #alertBox .alert').remove();
+                            },1000)
+                        }).fail(function (jxhr,statusText,err) {
+                            alert(err);
+                            console.log(jxhr.responseText)
+
+                            var alertPost=`<div class="alert alert-dark" role="alert">
+                                      <h4 class="alert-heading">UnSuccessful!</h4><hr>
+                                      <p class="mb-0"> ${responseText}</p>
+                                      </div>`;
+                            $('#alertBox').append(alertPost);
+                            $('button[type="reset"]').trigger('click');
+                            setTimeout(function () {
+                                $('form #alertBox .alert').remove();
+                            },1000)
+                        });
+                    }
+
+                });
+
+            });
+
+            $('#itemTable').DataTable({
+                'paging'      : true,
+                'lengthChange': false,
+                'searching'   : true,
+                'ordering'    : true,
+                'info'        : true,
+                'autoWidth'   : true,
+                'pageLength'  : 5,
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Search Customers..."
+                }
+            });
+        }).fail(function (jxhr,statusText,err) {
+
+        })
+
+
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node js project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/AdminLTE.min.css">
+    <link rel="stylesheet" href="css/skin-black.min.css">
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+          crossorigin="anonymous">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="css/formcontroller.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+<!-- Main Header -->
+<header class="main-header ">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span id="headerFix" class="logo-mini headerFix"><b>S</b>HOP</span>
+        <!-- logo for regular state and mobile devices -->
+        <span id="headerFix2" class="logo-lg headerFix"><b>THOGAKADE</b> SHOP</span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-fixed-top " role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#">
+            <!-- <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"> -->
+            <i style="position: absolute;left :15px ;color: #fff; top:15px" class="fas fa-align-justify" data-toggle="push-menu"
+               role="button"></i>
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+
+
+    </nav>
+</header>
+<!-- Left side column. contains the logo and sidebar -->
+<aside id="headerFix3" class="main-sidebar headerFix">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+        <!-- Sidebar user panel (optional) -->
+
+        <!-- /.search form -->
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">HEADER</li>
+            <!-- Optionally, you can add icons to the links -->
+            <li class="active btn btn-secondary  active-btn" style="width: 100%"><a class="active-tag" href="index.html"><i class="fas fa-home"></i></i>
+                <span>DASHBOARD</span></a></li>
+            <li><a href="Customer.html"><i class="fas fa-id-card"></i> <span>Customer</span></a></li>
+            <li><a href="Item.html"><i class="fas fa-shopping-basket"></i> <span>Items</span></a></li>
+
+            <li class="treeview">
+                <a href="#"><i class="fas fa-shipping-fast"></i> <span>Order</span>
+                    <span class="pull-right-container">
+                <i class="fas fa-shopping-basket"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="place_order.html"><i class="fas fa-cart-plus"></i> <span> Place Order</span></a></li>
+                    <li><a href="Order_Detail.html"> <i class="fas fa-shopping-cart"></i> <span> Order Details</span></a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Dashboard
+            <small>Control panel</small>
+        </h1><br>
+        <div class="row">
+            <div class="col-lg-6 col-xs-12">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3 id="nocustomer"></h3>
+
+                        <p>Customers</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-user-plus" style="font-size: 75px; opacity: 0.5;"></i>
+                    </div>
+                    <a href="Customer.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-6 col-xs-12">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3 id="noItems"><sup style="font-size: 20px">%</sup></h3>
+
+                        <p>ITEMS</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-shopping-basket" style="font-size: 75px; opacity: 0.5;"></i>
+                    </div>
+                    <a href="Item.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-6 col-xs-12">
+                <!-- small box -->
+                <div class="small-box bg-yellow">
+                    <div class="inner">
+                        <h3 id="placeOrder"></h3>
+
+                        <p>Place Order</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-shopping-bag" style="font-size: 75px;  opacity: 0.5;"></i>
+                    </div>
+                    <a href="place_order.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-6 col-xs-12">
+                <!-- small box -->
+                <div class="small-box bg-red">
+                    <div class="inner">
+                        <h3 id="orderDetail"></h3>
+
+                        <p>Order Details</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-shopping-cart" style="font-size: 75px;  opacity: 0.5;"></i>
+                    </div>
+                    <a href="Order_Detail.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+
+
+
+    </section>
+
+
+</div>
+<!-- /.content-wrapper -->
+
+<!-- Main Footer -->
+<footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+        Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2019 <a href="#">Company</a>.</strong> All rights reserved.
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+
+    <!-- /.control-sidebar-menu -->
+
+
+    </div>
+</aside>
+<!-- /.control-sidebar -->
+<!-- Add the sidebar's background. This div must be placed
+immediately after the control sidebar -->
+<div class="control-sidebar-bg"></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap.min.js"></script>
+<script src="js/jquery.slimscroll.min.js"></script>
+<script src="js/fastclick.js"></script>
+<script src="js/adminlte.min.js"></script>
+<script src="js/demo.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    var host="http://localhost:3000/api/v1";
+    $(document).ready(function () {
+        var ajax_config={
+            method:"Head",
+            url:host+"/customers",
+            async:true,
+            
+        };
+        $.ajax(ajax_config).done(function (responseText,statusText,jxhr) {
+            var numberOfCustomers=jxhr.getResponseHeader("x-count");
+            $('#nocustomer').text(numberOfCustomers);
+        }).fail(function (jxhr,statusText,err) {
+
+        });
+
+        var ajax_config={
+            method:"Head",
+            url:host+"/items",
+            async:true,
+
+        };
+
+        $.ajax(ajax_config).done(function (responseText,statusText,jxhr) {
+            var numberOfItems=jxhr.getResponseHeader("x-count");
+            $('#noItems').text(numberOfItems);
+        }).fail(function (jxhr,statusText,err) {
+
+        });
+
+
+        var ajax_config={
+            method:"Head",
+            url:host+"/place-orders",
+            async:true,
+
+        };
+
+        $.ajax(ajax_config).done(function (responseText,statusText,jxhr) {
+            var numberOfOrders=jxhr.getResponseHeader("x-count");
+            $('#placeOrder').text(numberOfOrders);
+        }).fail(function (jxhr,statusText,err) {
+
+        });
+
+        var ajax_config={
+            method:"Head",
+            url:host+"/order-details",
+            async:true,
+
+        };
+
+        $.ajax(ajax_config).done(function (responseText,statusText,jxhr) {
+            var numberOfOrderDetails=jxhr.getResponseHeader("x-count");
+            $('#orderDetail').text(numberOfOrderDetails);
+        }).fail(function (jxhr,statusText,err) {
+
+        });
+    })
+</script>
+</body>
+</html>

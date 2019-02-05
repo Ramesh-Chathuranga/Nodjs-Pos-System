@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Detail</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/AdminLTE.min.css">
+    <link rel="stylesheet" href="css/skin-black.min.css">
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+          crossorigin="anonymous">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="css/formcontroller.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/entity.css">
+    <style>
+        @media screen and (max-width:1000px){
+            .bt{
+                position: absolute;
+
+                left:20px;
+            }
+            .void{
+                display: none;
+            }
+
+            .table{
+                top:85px;
+            }
+            button{
+                width: 100px;
+                margin-left: 30px;
+                margin-right: 30px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .alert{
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+<!-- Main Header -->
+<header class="main-header ">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span id="headerFix" class="logo-mini headerFix"><b>S</b>HOP</span>
+        <!-- logo for regular state and mobile devices -->
+        <span id="headerFix2" class="logo-lg headerFix"><b>THOGAKADE</b> SHOP</span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-fixed-top " role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#">
+            <!-- <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"> -->
+            <i style="position: absolute;left :15px ;color: #fff; top:15px" class="fas fa-align-justify" data-toggle="push-menu"
+               role="button"></i>
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+
+          <a id="user"></a>
+    </nav>
+</header>
+<!-- Left side column. contains the logo and sidebar -->
+<aside id="headerFix3" class="main-sidebar headerFix" style="margin-top: 45px">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+        <!-- Sidebar user panel (optional) -->
+
+        <!-- /.search form -->
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">HEADER</li>
+            <!-- Optionally, you can add icons to the links -->
+            <li><a  href="index.html"><i class="fas fa-home"></i></i>
+                <span>DASHBOARD</span></a></li>
+            <li ><a href="Customer.html"><i class="fas fa-id-card"></i> <span>Customer</span></a></li>
+            <li ><a  href="Item.html"><i class="fas fa-shopping-basket"></i> <span>Items</span></a></li>
+
+            <li class="treeview">
+                <a href="#"><i class="fas fa-shipping-fast"></i> <span>Order</span>
+                    <span class="pull-right-container">
+                <i class="fas fa-shopping-basket"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="active btn btn-secondary  active-btn" style="width: 100%"><a  class="active-tag" href="place_order.html"><i class="fas fa-cart-plus"></i> <span> Place Order</span></a></li>
+                    <li ><a  href="Order_Detail.html"> <i class="fas fa-shopping-cart"></i> <span> Order Details</span></a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1 class="tab">
+            Order_Detail
+            <small>Control panel</small>
+
+        </h1><br>
+
+
+        <div class="row">
+
+
+            <div class="col-lg-5 col-xs-12  form">
+                <form>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Order_ID:</label>
+                        <div class="col-sm-10">
+                           <label id="lblOID"></label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label">Date:</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="txtDate" placeholder="Date">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label">CustomerId:</label>
+                        <div class="col-sm-10">
+                            <select id="comboCID" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label">Item Code:</label>
+                        <div class="col-sm-10">
+                            <select id="comboCode" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label">Description:</label>
+                        <div class="col-sm-10">
+                            <input type="txt" class="form-control" id="txtDes" placeholder="Description">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label">Unit Price:</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="txtUP" placeholder="Unit Price">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label">QtyOnHand:</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="txtQtyOnHand" placeholder="QtyOnHand">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label">Qty:</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="txtQty" placeholder="Qty" min="1" max="" required>
+                        </div>
+                    </div>
+
+                    <div class="row bt">
+                        <div class="col-md-3  col-sm-6" ><button class="btn btn-light" id="newButton" type="button">New</button></div>
+                        <div class="col-md-3  col-sm-6" ><button class="btn btn-dark" id="saveButton" type="button">SAVE</button></div>
+                        <div class="col-md-3  col-sm-6"><button  class="btn btn-warning" id="resetButton" type="reset">REST</button></div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-7 col-xs-12 table">
+                <div class="box" style="font-size: 12px;">
+                    <div class="box-header">
+                        <h3 class="box-title">List Table</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="listTable" class="table  table-bordered table-hover table-striped " style="margin-right: 300px">
+                            <thead>
+                            <tr>
+                                <th>code</th>
+                                <th>Description</th>
+                                <th>Unit Price</th>
+                                <th>Qty</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+<!-- /.content-wrapper -->
+
+<!-- Main Footer -->
+<footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+        Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2019 <a href="#">Company</a>.</strong> All rights reserved.
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+
+    <!-- /.control-sidebar-menu -->
+
+
+    </div>
+</aside>
+<!-- /.control-sidebar -->
+<!-- Add the sidebar's background. This div must be placed
+immediately after the control sidebar -->
+<div class="control-sidebar-bg"></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap.min.js"></script>
+<script src="js/jquery.slimscroll.min.js"></script>
+<script src="js/fastclick.js"></script>
+<script src="js/adminlte.min.js"></script>
+
+<script>
+    $(function () {
+
+        $('#listTable').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : true,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : true,
+            language: {
+                search: "_INPUT_",
+                searchPlaceholder: "Search Customers..."
+            }
+        })
+    })
+</script>
+<script>
+    var host="http://localhost:3000/api/v1";
+
+
+    // function setToday() {
+    //     var today = new Date();
+    //     // Just need to parse the format that you need
+    //     var formattedDate = today.format("mm/dd/yyyy");
+    //     $("#txtDate").val(formattedDate);
+    // }
+
+
+
+    $(document).ready(function () {
+
+        $('#comboCode').children().remove();
+        $('#comboCID').children().remove();
+        $('button[type="reset"]').trigger('click');
+        loadCustomers();
+        loadItems();
+        $('#txtDes').attr("disabled",true);
+        $('#txtQtyOnHand').attr("disabled",true);
+        $('#txtUP').attr("disabled",true);
+        $("#listTable tbody tr").remove()
+        // setToday();
+    })
+
+
+    $("#resetButton").click(function () {
+        // $('#txtID').attr("disabled",false);
+        $('#listTable tbody tr').removeClass('selected-row');
+        $('input').removeClass('emptyField');
+        $("#user").text("");
+        $('#comboCode').attr("disabled",true);
+        $('#comboCID').attr("disabled",true);
+        $('#txtQty').attr("disabled",true);
+        $("#txtDate").attr("disabled",true);
+        $("#newButton").attr("disabled",false);
+    })
+
+    $("#newButton").click(function () {
+        $('#comboCode').attr("disabled",false);
+        $('#comboCID').attr("disabled",false);
+        $('#txtQty').attr("disabled",false);
+        $("#txtDate").attr("disabled",false);
+    })
+
+    var customerList=[];
+
+  function loadCustomers() {
+      var ajax_config={
+          method:"GET",
+          url:host+"/customers",
+          async:true,
+      }
+
+      $.ajax(ajax_config).done(function (respondText,statusText,jxhr) {
+
+          respondText.forEach(function (customer) {
+              // console.log(customer.id)
+              let html=`<option value="${customer.id}">${customer.id}</option>`;
+              $("#comboCID").append(html)
+
+              customerList.push({id:customer.id,name:customer.name,address:customer.address});
+
+
+          })
+      }).fail(function (jxhr,statusText,err) {
+          console.log(err)
+      })
+  }
+
+
+    $('#comboCID').change(function () {
+        var cid=$(this).val();
+        console.log(cid)
+        customerList.forEach(function (customer) {
+            if(customer.id==cid){
+                console.log(customer.name);
+                $("#user").text(customer.name);
+            }
+        })
+    })
+
+
+  var itemList=[];
+  function loadItems() {
+      var ajax_config={
+          method:"GET",
+          url:host+"/items",
+          async:true,
+      }
+
+      $.ajax(ajax_config).done(function (respondText,statusText,jxhr) {
+          respondText.forEach(function (item) {
+              let html=`<option value="${item.code}">${item.code}</option>`;
+              $("#comboCode").append(html)
+              itemList.push({code:item.code,description:item.description,unitPrice:item.unitPrice,qtyOnHand:item.qtyOnHand});
+          })
+      }).fail(function (jxhr,statusText,err) {
+          console.log(err)
+      })
+  }
+
+  var QTYONHAND=undefined;
+
+    $("#comboCode").change(function () {
+         let code=  $(this).val();
+         itemList.forEach(function (item) {
+             if(item.code==code){
+                 $("#txtDes").val(item.description);
+                 $("#txtUP").val(item.unitPrice);
+                 $("#txtQtyOnHand").val(item.qtyOnHand);
+                 $("#txtQty").attr('max',item.qtyOnHand);
+                 QTYONHAND=item.qtyOnHand;
+             }
+         })
+    })
+
+
+
+    $("#txtQty").keyup(function () {
+        let qty=$(this).val()
+
+         isValidity(qty);
+
+    })
+
+    $("#txtQty").click(function () {
+        let qty=$(this).val()
+
+        isValidity(qty);
+    })
+var rest=0;
+    function isValidity(qty) {
+       if(qty>0){
+           if($.isNumeric(qty)){
+               $("#txtQty").removeClass('emptyField');
+               rest=QTYONHAND-qty;
+               if(rest<0){
+                   $("#txtQty").addClass('emptyField');
+                   $("#txtQty").val("");
+               }
+           }else{
+               $("#txtQty").addClass('emptyField');
+               $("#txtQty").val("");
+           }
+       }else{
+           $("#txtQty").addClass('emptyField');
+           $("#txtQty").val("");
+       }
+    }
+
+
+    $("#saveButton").off('click')
+    $("#saveButton").click(function () {
+        $("#listTable").dataTable().fnDestroy();
+
+       if(!$('#txtQty').val()){
+           //qty is not filled
+           alert("qty fail")
+           $('#txtQty').addClass('emptyField')
+       }else {
+           if($("#comboCode").attr("disabled")){
+              
+           }else{
+
+               var total=parseInt($("#txtQty").val())*parseFloat($("#txtUP").val());
+               var html=`<tr>
+                            <td>${$("#comboCode").val()}</td>
+                             <td>${$("#txtDes").val()}</td>
+                             <td>${$("#txtUP").val()}</td>
+                             <td>${$("#txtQty").val()}</td>
+                             <td>${total}</td>
+                              <td><i id="bin" class="fas fa-trash"></i></td>
+                         </tr>`;
+               $("#listTable").append(html);
+
+
+               $('button[type="reset"]').trigger('click');
+
+               $('#listTable tbody tr').off('click');
+               $("#listTable tbody tr").click(function () {
+                   $("#listTable tbody tr").removeClass('selected-row');
+                   $(this).addClass('selected-row');
+                   var itemCode=$(this).find('td:first-child').text();
+                   $("#comboCode").val(itemCode).trigger("change");
+                   $("#txtQty").val($(this).find('td:nth-child(4)').text());
+                   $("#comboCode").attr("disabled",true);
+                   $("#txtQty").attr("disabled",false);
+                   $("#newButton").attr("disabled",true);
+               })
+
+
+               alert($('tbody').children().length)
+
+           }
+
+           $(".fa-trash").off('click')
+           $(".fa-trash").click(function (eventData) {
+               eventData.stopPropagation();
+
+               $(this).parents('tr').remove();
+
+               alert($('tbody').children().length)
+           })
+
+
+           $('#listTable').DataTable({
+               'paging'      : true,
+               'lengthChange': false,
+               'searching'   : true,
+               'ordering'    : true,
+               'info'        : true,
+               'autoWidth'   : true,
+               'pageLength'  : 5,
+               language: {
+                   search: "_INPUT_",
+                   searchPlaceholder: "Search Customers..."
+               }
+           });
+
+       }
+
+
+    })
+
+
+
+</script>
+
+
+</body>
+</html>
